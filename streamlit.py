@@ -87,6 +87,9 @@ def move_to_template(df):
 
 def move_to_template_benefit(df):
     # Step 1: Filter the data
+    df = df.rename(columns={
+    'Status_Claim': 'ClaimStatus',
+    })
     new_df = filter_data(df)
 
     # Step 2: Convert date columns to datetime
