@@ -172,7 +172,7 @@ uploaded_cr_file = st.file_uploader("Upload your CR file", type=["xlsx"])
 if uploaded_sc_file and uploaded_benefit_file and uploaded_cr_file:
     raw_sc = pd.read_csv(uploaded_sc_file)
     raw_benefit = pd.read_csv(uploaded_benefit_file)
-    raw_cr = pd.read_excel(uploaded_cr_file)
+    raw_cr = pd.read_excel(uploaded_cr_file, engine="openpyxl")
 
     # Process data
     st.write("Processing data...")
